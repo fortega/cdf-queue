@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "cdf-queue"
+version = "0.0.1"
+description = "File processing queue. Ideal for contextualization workload."
+authors = ["Felipe <felipeortegabustamante@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+cognite-sdk = "^7.70.7"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
