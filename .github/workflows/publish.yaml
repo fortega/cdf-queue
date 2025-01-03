@@ -1,0 +1,22 @@
+name: Publish
+on:
+  push:
+    branches:
+    - main
+jobs:
+  publish:
+    environment: pypi
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install poetry && poetry install
+      - name: Build
+        run: poetry build
+      - name: Publish
+        run: poetry publish
+        env:
+          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PASSWORD }}
