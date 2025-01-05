@@ -8,6 +8,14 @@
             "module": "pytest",
             "args": ["-s"],
             "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Pytest current file",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": ["-s", "${relativeFile}"],
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
